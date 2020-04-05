@@ -39,7 +39,6 @@ subprojects {
     }
 
     detekt {
-        toolVersion = BuildPluginsVersion.DETEKT
         config = rootProject.files("config/detekt/detekt.yml")
         reports {
             html {
