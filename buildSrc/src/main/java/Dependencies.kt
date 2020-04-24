@@ -18,7 +18,7 @@ object Versions {
 object BuildPluginsVersion {
     const val AGP = "3.6.2"
     const val DETEKT = "1.7.4"
-    const val KOTLIN = "1.3.71"
+    const val KOTLIN = "1.3.72"
     const val KTLINT = "9.2.1"
     const val VERSIONS_PLUGIN = "0.28.0"
 }
