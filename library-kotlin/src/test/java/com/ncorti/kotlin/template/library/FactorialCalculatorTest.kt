@@ -1,5 +1,6 @@
 package com.ncorti.kotlin.template.library
 
+import com.ncorti.kotlin.template.library.FactorialCalculator.computeFactorial
 import java.lang.Exception
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertThrows
@@ -10,24 +11,22 @@ import org.junit.Test
  *
  * See [testing documentation](http://d.android.com/tools/testing).
  */
-class FactorialCalculatorImplTest {
-
-    private val calculator = FactorialCalculatorProvider.calculator
+class FactorialCalculatorTest {
 
     @Test
     fun computeFactorial_withNegative_raiseException() {
         assertThrows(Exception::class.java) {
-            calculator.computeFactorial(-1)
+            computeFactorial(-1)
         }
     }
 
     @Test
     fun computeFactorial_forZero() {
-        assertEquals(1, calculator.computeFactorial(0))
+        assertEquals(1, computeFactorial(0))
     }
 
     @Test
     fun computeFactorial_forFive() {
-        assertEquals(120, calculator.computeFactorial(5))
+        assertEquals(120, computeFactorial(5))
     }
 }
