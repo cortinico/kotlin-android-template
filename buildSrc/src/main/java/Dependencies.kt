@@ -12,7 +12,7 @@ object Versions {
     const val CORE_KTX = "1.2.0"
     const val ESPRESSO_CORE = "3.2.0"
     const val JUNIT = "4.13"
-    const val KTLINT = "0.36.0"
+    const val KTLINT = "0.37.0"
 }
 
 object BuildPluginsVersion {
