@@ -15,17 +15,22 @@ buildscript {
             'VERSIONS_PLUGIN': '0.28.0',
             'JUNIT': '4.13',
             'ANDROIDX_TEST': '1.2.0',
-            'ANDROIDX_TEST_EXT': "1.1.1",
+            'ANDROIDX_TEST_EXT': '1.1.1',
+            'ESPRESSO_CORE': '3.2.0',
             'APPCOMPAT': '1.1.0',
-            'CORE_KTX': '1.2.0'
+            'CORE_KTX': '1.2.0',
+            'CONSTRAINT_LAYOUT': '1.1.3'
     ]
 
     ext.deps = [
             'JUNIT': "junit:junit:${versions.JUNIT}",
             'ANDROIDX_APPCOMPAT': "androidx.appcompat:appcompat:${versions.APPCOMPAT}",
             'ANDROIDX_CORE_KTX': "androidx.core:core-ktx:${versions.CORE_KTX}",
+            'ANDROIDX_CONSTRAINT_LAYOUT': "com.android.support.constraint:constraint-layout:${versions.CONSTRAINT_LAYOUT}",
             'ANDROIDX_TEST_RUNNER': "androidx.test:runner:${versions.ANDROIDX_TEST}",
-            'ANDROIDX_TEST_EXT_JUNIT': "androidx.test.ext:junit:${versions.ANDROIDX_TEST_EXT}"
+            'ANDROIDX_TEST_EXT_JUNIT': "androidx.test.ext:junit:${versions.ANDROIDX_TEST_EXT}",
+            'ANDROIDX_TEST_RULES': "androidx.test:rules:${versions.ANDROIDX_TEST}",
+            'ESPRESSO_CORE': "androidx.test.espresso:espresso-core:${versions.ESPRESSO_CORE}"
     ]
 }
 
