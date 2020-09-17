@@ -1,15 +1,16 @@
-version = LibraryKotlinCoordinates.LIBRARY_VERSION
 
 plugins {
     id("java-library")
-    kotlin("jvm")
+    id("org.jetbrains.kotlin.jvm")
     id("maven-publish")
 }
 
-dependencies {
-    implementation(kotlin("stdlib-jdk7"))
+version = '1.0'
 
-    testImplementation(TestingLib.JUNIT)
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.KOTLIN}"
+
+    testImplementation deps.JUNIT
 }
 
 java {
@@ -19,8 +20,8 @@ java {
 
 publishing {
     publications {
-        create<MavenPublication>("maven") {
-            from(components["java"])
+        maven(MavenPublication) {
+            from components.java
         }
     }
 }
