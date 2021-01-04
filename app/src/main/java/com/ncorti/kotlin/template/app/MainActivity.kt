@@ -10,10 +10,11 @@ import com.ncorti.kotlin.template.library.android.NotificationUtil
 class MainActivity : AppCompatActivity() {
 
     private val notificationUtil: NotificationUtil by lazy { NotificationUtil(this) }
-    private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.buttonCompute.setOnClickListener {
