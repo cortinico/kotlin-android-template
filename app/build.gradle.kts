@@ -1,7 +1,6 @@
 plugins {
     id("com.android.application")
     kotlin("android")
-    id("kotlin-android-extensions")
 }
 
 android {
@@ -15,6 +14,9 @@ android {
         versionCode = AppCoordinates.APP_VERSION_CODE
         versionName = AppCoordinates.APP_VERSION_NAME
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildFeatures {
+        viewBinding = true
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
