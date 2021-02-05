@@ -18,16 +18,13 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
-      - name: Cache Gradle Caches
+      - name: Cache Gradle Files
         uses: actions/cache@v2
         with:
-          path: ~/.gradle/caches/
-          key: cache-gradle-cache
-      - name: Cache Gradle Wrapper
-        uses: actions/cache@v2
-        with:
-          path: ~/.gradle/wrapper/
-          key: cache-gradle-wrapper
+          path: |
+            ~/.gradle/caches/
+            ~/.gradle/wrapper/
+          key: cache-gradle
       - name: Run Gradle tasks
         run: ./gradlew build check publishToMavenLocal --continue
       - name: Stop Gradle
