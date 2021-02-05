@@ -19,12 +19,12 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2
       - name: Cache Gradle Caches
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           path: ~/.gradle/caches/
           key: cache-gradle-cache
       - name: Cache Gradle Wrapper
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           path: ~/.gradle/wrapper/
           key: cache-gradle-wrapper
