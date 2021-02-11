@@ -1,0 +1,38 @@
+name: Publish Release
+on:
+  push:
+    tags:
+      - '*'
+  workflow_dispatch:
+
+jobs:
+  publish:
+    if: ${{ github.repository == 'cortinico/kotlin-android-template'}}
+    runs-on: [ubuntu-latest]
+    env:
+      GRADLE_OPTS: -Dorg.gradle.parallel=false
+
+    steps:
+
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Publish to Maven Local
+        run: ./gradlew publishToMavenLocal
+        env:
+          ORG_GRADLE_PROJECT_SIGNING_KEY: ${{ secrets.ORG_GRADLE_PROJECT_SIGNING_KEY }}
+          ORG_GRADLE_PROJECT_SIGNING_PWD: ${{ secrets.ORG_GRADLE_PROJECT_SIGNING_PWD }}
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: 'release-artifacts'
+          path: '~/.m2/repository/'
+
+      - name: Publish to the Snapshot Repository
+        run: ./gradlew publishReleasePublicationToNexusRepository
+        env:
+          ORG_GRADLE_PROJECT_SIGNING_KEY: ${{ secrets.ORG_GRADLE_PROJECT_SIGNING_KEY }}
+          ORG_GRADLE_PROJECT_SIGNING_PWD: ${{ secrets.ORG_GRADLE_PROJECT_SIGNING_PWD }}
+          ORG_GRADLE_PROJECT_NEXUS_USERNAME: ${{ secrets.ORG_GRADLE_PROJECT_NEXUS_USERNAME }}
+          ORG_GRADLE_PROJECT_NEXUS_PASSWORD: ${{ secrets.ORG_GRADLE_PROJECT_NEXUS_PASSWORD }}

@@ -1,9 +1,9 @@
 import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 
 plugins {
-    id("com.android.application") version BuildPluginsVersion.AGP apply false
-    id("com.android.library") version BuildPluginsVersion.AGP apply false
-    kotlin("android") version BuildPluginsVersion.KOTLIN apply false
+    id("com.android.application") apply false
+    id("com.android.library") apply false
+    kotlin("android") apply false
     id("io.gitlab.arturbosch.detekt") version BuildPluginsVersion.DETEKT
     id("org.jlleitschuh.gradle.ktlint") version BuildPluginsVersion.KTLINT
     id("com.github.ben-manes.versions") version BuildPluginsVersion.VERSIONS_PLUGIN
