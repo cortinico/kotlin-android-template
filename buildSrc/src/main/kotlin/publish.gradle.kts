@@ -105,7 +105,6 @@ afterEvaluate {
                         developer {
                             id.set("cortinico")
                             name.set("Nicola Corti")
-                            email.set("corti.nico@gmail.com")
                         }
                     }
                     scm {
