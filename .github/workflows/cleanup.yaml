@@ -21,7 +21,7 @@ jobs:
         uses: actions/checkout@v2
       # Cleanup project
       - name: Cleanup
-        run: ./gradlew publishToMavenLocal
+        run: ./gradlew templateCleanup
       # Commit modified files
       - name: Commit files
         run: |
