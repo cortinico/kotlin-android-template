@@ -1,3 +1,14 @@
+/**
+ * A plugin to cleanup the template after it has been forked. It register a single `templateCleanup`
+ * task that is designed to run from CI. It:
+ * - renames the root project
+ * - replaces the maven coordinates with coordinates based on the Github repository where the
+ * template is forked
+ * - changes the package name
+ * - changes the Android application ID
+ * - cleanups after itself by removing the Github action and this plugin
+ */
+
 check(rootProject.name == name) {
     "The cleanup plugin should be applied to the root project and not $name"
 }
