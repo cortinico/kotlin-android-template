@@ -1,4 +1,4 @@
-# GitHub Actions Workflow responsible for cleaning up the IntelliJ Platform Plugin Template repository from
+# GitHub Actions Workflow responsible for cleaning up the template repository from
 # the template-specific files and configurations. This workflow is supposed to be triggered automatically
 # when a new template-based repository has been created.
 
