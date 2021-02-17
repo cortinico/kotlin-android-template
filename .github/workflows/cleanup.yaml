@@ -30,7 +30,7 @@ jobs:
           git commit -m "Template cleanup"
       # Push changes
       - name: Push changes
-        uses: ad-m/github-push-action@master
+        uses: ad-m/github-push-action@v0.6.0
         with:
           branch: master
           github_token: ${{ secrets.GITHUB_TOKEN }}
