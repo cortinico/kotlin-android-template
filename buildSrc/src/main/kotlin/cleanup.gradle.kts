@@ -42,7 +42,7 @@ tasks.register("templateCleanup") {
         )
     }
 
-    copyTemplateFiles(repository, name)
+    patchReadme(repository, name)
     changePackageName(owner, name)
 
     // cleanup the cleanup :)
@@ -65,17 +65,21 @@ fun File.replace(oldValue: String, newValue: String) {
     writeText(readText().replace(oldValue, newValue))
 }
 
-fun copyTemplateFiles(repository: String, name: String) {
-    file(".github/template-cleanup")
-        .listFiles()!!
-        .filter { it.isFile }
-        .forEach {
-            it.copyTo(target = file(it.name), overwrite = true)
-            file(it.name).apply {
-                replace("%NAME%", name)
-                replace("%REPOSITORY%", repository)
-            }
+fun patchReadme(repository: String, name: String) {
+    val newIntro = file(".github/template-cleanup/README.md")
+            .readText()
+            .replace("%NAME%", name)
+            .replace("%REPOSITORY%", repository)
+
+    var featuresFound = false
+    val existingReadme = file("README.md").readLines().mapNotNull {
+        if (it.startsWith("## Features")) {
+            featuresFound = true
         }
+        if (!featuresFound) null else it
+    }.joinToString("\n")
+
+    file("README.md").writeText(newIntro + "\n" + existingReadme)
 }
 
 fun srcDirectories() = projectDir.listFiles()!!
