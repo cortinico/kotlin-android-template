@@ -29,20 +29,7 @@ tasks.register("templateCleanup") {
         "com.ncorti.kotlin.template",
         "com.github.$owner.$name"
     )
-    /**
-     * This fails with: 'refusing to allow a GitHub App to create or update workflow
-     * `.github/workflows/publish-release.yaml` without `workflows` permission'
-     */
-    /*
-    file(".github/workflows/publish-release.yaml").replace(
-        "cortinico/kotlin-android-template",
-        "$owner/$name"
-    )
-    file(".github/workflows/publish-snapshot.yaml").replace(
-        "cortinico/kotlin-android-template",
-        "$owner/$name"
-    )
-     */
+
     file("buildSrc/src/main/kotlin/publish.gradle.kts").apply {
         replace("cortinico/kotlin-android-template", "$owner/$name")
         replace("cortinico/kotlin-android-template", "$owner/$name")
