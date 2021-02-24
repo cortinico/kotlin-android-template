@@ -7,6 +7,7 @@ on:
 
 jobs:
   publish:
+    # remove this check when your secrets are setup and you're ready to publish
     if: ${{ github.repository == 'cortinico/kotlin-android-template'}}
     runs-on: [ubuntu-latest]
     env:

@@ -1,0 +1,36 @@
+# GitHub Actions Workflow responsible for cleaning up the template repository from
+# the template-specific files and configurations. This workflow is supposed to be triggered automatically
+# when a new template-based repository has been created.
+
+name: Template Cleanup
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  template-cleanup:
+    name: Template Cleanup
+    runs-on: ubuntu-latest
+    if: github.event.repository.name != 'kotlin-android-template'
+    steps:
+
+      # Check out current repository
+      - name: Fetch Sources
+        uses: actions/checkout@v2
+      # Cleanup project
+      - name: Cleanup
+        run: ./gradlew templateCleanup
+      # Commit modified files
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "Template cleanup"
+      # Push changes
+      - name: Push changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          branch: master
+          github_token: ${{ secrets.GITHUB_TOKEN }}
