@@ -1,0 +1,33 @@
+name: Pre Merge Checks
+
+on:
+  pull_request:
+    branches:
+      - '*'
+
+jobs:
+  gradle:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      - uses: reviewdog/action-setup@v1
+        with:
+          reviewdog_version: latest
+      - name: Cache Gradle Files
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.gradle/caches/
+            ~/.gradle/wrapper/
+          key: cache-gradle
+      - name: Run Gradle tasks
+        run: ./gradlew detekt
+        continue-on-error: true
+      - name: Stop Gradle
+        run: ./gradlew --stop
+      - name: Run reviewdog
+        env:
+          REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          reviewdog -f=checkstyle -name="detekt" -reporter="github-pr-review" -level="warning" -fail-on-error=true < app/build/detekt.xml
