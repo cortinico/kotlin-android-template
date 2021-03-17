@@ -5,7 +5,6 @@ plugins {
     id("com.android.library") apply false
     kotlin("android") apply false
     id("io.gitlab.arturbosch.detekt") version BuildPluginsVersion.DETEKT
-    id("org.jlleitschuh.gradle.ktlint") version BuildPluginsVersion.KTLINT
     id("com.github.ben-manes.versions") version BuildPluginsVersion.VERSIONS_PLUGIN
     cleanup
 }
@@ -22,21 +21,6 @@ allprojects {
 subprojects {
     apply {
         plugin("io.gitlab.arturbosch.detekt")
-        plugin("org.jlleitschuh.gradle.ktlint")
-    }
-
-    ktlint {
-        debug.set(false)
-        version.set(Versions.KTLINT)
-        verbose.set(true)
-        android.set(false)
-        outputToConsole.set(true)
-        ignoreFailures.set(false)
-        enableExperimentalRules.set(true)
-        filter {
-            exclude("**/generated/**")
-            include("**/kotlin/**")
-        }
     }
 
     detekt {
@@ -47,6 +31,10 @@ subprojects {
                 destination = file("build/reports/detekt.html")
             }
         }
+    }
+
+    dependencies {
+        detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:${BuildPluginsVersion.DETEKT}")
     }
 }
 
