@@ -57,8 +57,12 @@ tasks.register("clean", Delete::class.java) {
 
 tasks.withType<DependencyUpdatesTask> {
     rejectVersionIf {
-        isNonStable(candidate.version)
+        candidate.version.isStableVersion().not()
     }
 }
 
-fun isNonStable(version: String) = "^[0-9,.v-]+(-r)?$".toRegex().matches(version).not()
+fun String.isStableVersion(): Boolean {
+    val stableKeyword =
+        listOf("RELEASE", "FINAL", "GA").any { toUpperCase(java.util.Locale.ROOT).contains(it) }
+    return stableKeyword || Regex("^[0-9,.v-]+(-r)?$").matches(this)
+}
