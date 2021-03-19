@@ -11,16 +11,14 @@ object Versions {
     const val CONSTRAINT_LAYOUT = "2.0.4"
     const val CORE_KTX = "1.3.2"
     const val ESPRESSO_CORE = "3.3.0"
-    const val JUNIT = "4.13.1"
+    const val JUNIT = "4.13.2"
     const val KTLINT = "0.40.0"
 }
 
 object BuildPluginsVersion {
-    const val AGP = "4.1.2"
     const val DETEKT = "1.16.0"
-    const val KOTLIN = "1.4.30"
-    const val KTLINT = "9.4.1"
-    const val VERSIONS_PLUGIN = "0.36.0"
+    const val KTLINT = "10.0.0"
+    const val VERSIONS_PLUGIN = "0.38.0"
 }
 
 object SupportLibs {
