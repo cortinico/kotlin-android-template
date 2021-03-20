@@ -23,6 +23,7 @@ subprojects {
     apply {
         plugin("io.gitlab.arturbosch.detekt")
         plugin("org.jlleitschuh.gradle.ktlint")
+        plugin("com.github.ben-manes.versions")
     }
 
     ktlint {
@@ -50,14 +51,14 @@ subprojects {
     }
 }
 
-tasks.register("clean", Delete::class.java) {
-    delete(rootProject.buildDir)
-}
+tasks {
+    register("clean", Delete::class.java) {
+        delete(rootProject.buildDir)
+    }
 
-tasks.withType<DependencyUpdatesTask> {
-    rejectVersionIf {
-        isNonStable(candidate.version)
+    withType<DependencyUpdatesTask> {
+        rejectVersionIf {
+            candidate.version.isStableVersion().not()
+        }
     }
 }
-
-fun isNonStable(version: String) = "^[0-9,.v-]+(-r)?$".toRegex().matches(version).not()
