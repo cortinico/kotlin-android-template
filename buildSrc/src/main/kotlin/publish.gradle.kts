@@ -125,7 +125,7 @@ afterEvaluate {
         if (signingKey.isNullOrBlank() || signingPwd.isNullOrBlank()) {
             logger.info("Signing Disable as the PGP key was not found")
         } else {
-            logger.warn("Usign $signingKey - $signingPwd")
+            logger.info("GPG Key found - Signing enabled")
             signing {
                 useInMemoryPgpKeys(signingKey, signingPwd)
                 sign(publishing.publications["release"])
