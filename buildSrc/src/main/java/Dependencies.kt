@@ -6,7 +6,6 @@ object Sdk {
 
 object Versions {
     const val ANDROIDX_TEST_EXT = "1.1.2"
-    const val ANDROIDX_TEST_EXT_KTX = "1.1.2"
     const val ANDROIDX_TEST = "1.3.0"
     const val APPCOMPAT = "1.2.0"
     const val CONSTRAINT_LAYOUT = "2.0.4"
@@ -36,6 +35,6 @@ object AndroidTestingLib {
     const val ANDROIDX_TEST_RULES = "androidx.test:rules:${Versions.ANDROIDX_TEST}"
     const val ANDROIDX_TEST_RUNNER = "androidx.test:runner:${Versions.ANDROIDX_TEST}"
     const val ANDROIDX_TEST_EXT_JUNIT = "androidx.test.ext:junit:${Versions.ANDROIDX_TEST_EXT}"
-    const val ANDROIDX_TEST_EXT_JUNIT_KTX = "androidx.test.ext:junit-ktx:${Versions.ANDROIDX_TEST_EXT_KTX}"
+    const val ANDROIDX_TEST_EXT_JUNIT_KTX = "androidx.test.ext:junit-ktx:${Versions.ANDROIDX_TEST_EXT}"
     const val ESPRESSO_CORE = "androidx.test.espresso:espresso-core:${Versions.ESPRESSO_CORE}"
 }
