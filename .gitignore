@@ -281,9 +281,14 @@ obj/
 .idea/sqlDataSources.xml
 .idea/dynamic.xml
 .idea/uiDesigner.xml
+
 # Below 2 lines added manually for this project
 .idea/.gitignore
 .idea/jarRepositories.xml
+
+# static analysis plugins
+.idea/sonarlint/
+.idea/checkstyle-idea.xml
 
 # OS-specific files
 .DS_Store?
