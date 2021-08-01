@@ -20,6 +20,8 @@ jobs:
 
       - name: Publish to Maven Local
         run: ./gradlew publishToMavenLocal
+        with:
+          java-version: '11'
         env:
           ORG_GRADLE_PROJECT_SIGNING_KEY: ${{ secrets.ORG_GRADLE_PROJECT_SIGNING_KEY }}
           ORG_GRADLE_PROJECT_SIGNING_PWD: ${{ secrets.ORG_GRADLE_PROJECT_SIGNING_PWD }}
@@ -33,6 +35,8 @@ jobs:
 
       - name: Publish to the Snapshot Repository
         run: ./gradlew publishReleasePublicationToSnapshotRepository
+        with:
+          java-version: '11'
         env:
           ORG_GRADLE_PROJECT_SIGNING_KEY: ${{ secrets.ORG_GRADLE_PROJECT_SIGNING_KEY }}
           ORG_GRADLE_PROJECT_SIGNING_PWD: ${{ secrets.ORG_GRADLE_PROJECT_SIGNING_PWD }}

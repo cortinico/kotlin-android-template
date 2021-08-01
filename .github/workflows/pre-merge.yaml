@@ -25,7 +25,9 @@ jobs:
             ~/.gradle/caches/
             ~/.gradle/wrapper/
           key: cache-gradle
-      - name: Run Gradle tasks
+      - name: Run Gradle 
+        with:
+          java-version: '11'
         run: ./gradlew build check publishToMavenLocal --continue
       - name: Stop Gradle
         run: ./gradlew --stop
