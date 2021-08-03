@@ -25,8 +25,10 @@ jobs:
             ~/.gradle/caches/
             ~/.gradle/wrapper/
           key: cache-gradle
-      - name: Run Gradle 
-        with:
+      - name: Run Gradle
+        uses: actions/setup-java@v2
+          with:
+          distribution: 'adopt' # See 'Supported distributions' for available options
           java-version: '11'
         run: ./gradlew build check publishToMavenLocal --continue
       - name: Stop Gradle
