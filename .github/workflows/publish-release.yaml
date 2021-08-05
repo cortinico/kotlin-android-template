@@ -18,11 +18,13 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2
 
-      - name: Publish to Maven Local
+      - name: Setup Java
         uses: actions/setup-java@v2
-          with:
-          distribution: 'adopt' # See 'Supported distributions' for available options
+        with:
+          distribution: 'adopt'
           java-version: '11'
+
+      - name: Publish to Maven Local
         run: ./gradlew publishToMavenLocal
         env:
           ORG_GRADLE_PROJECT_SIGNING_KEY: ${{ secrets.ORG_GRADLE_PROJECT_SIGNING_KEY }}
@@ -35,10 +37,6 @@ jobs:
           path: '~/.m2/repository/'
 
       - name: Publish to the Snapshot Repository
-        uses: actions/setup-java@v2
-          with:
-          distribution: 'adopt' # See 'Supported distributions' for available options
-          java-version: '11'
         run: ./gradlew publishReleasePublicationToNexusRepository
         env:
           ORG_GRADLE_PROJECT_SIGNING_KEY: ${{ secrets.ORG_GRADLE_PROJECT_SIGNING_KEY }}

@@ -18,12 +18,13 @@ jobs:
       # Check out current repository
       - name: Fetch Sources
         uses: actions/checkout@v2
+      # Setup Java
+      uses: actions/setup-java@v2
+        with:
+        distribution: 'adopt'
+        java-version: '11'
       # Cleanup project
       - name: Cleanup
-        uses: actions/setup-java@v2
-          with:
-          distribution: 'adopt' # See 'Supported distributions' for available options
-          java-version: '11'
         run: ./gradlew templateCleanup
       # Commit modified files
       - name: Commit files
