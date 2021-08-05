@@ -2,16 +2,16 @@ plugins {
     `kotlin-dsl`
 }
 repositories {
-    jcenter()
     google()
+    mavenCentral()
 }
 
 kotlinDslPluginOptions.experimentalWarning.set(false)
 
 object Plugins {
-    const val AGP = "4.1.3"
-    const val DOKKA = "1.4.20"
-    const val KOTLIN = "1.4.31"
+    const val AGP = "7.0.0"
+    const val DOKKA = "1.5.0"
+    const val KOTLIN = "1.5.21"
 }
 
 dependencies {
