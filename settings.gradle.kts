@@ -22,3 +22,4 @@ include(
     "library-android",
     "library-kotlin"
 )
+include(":app-compose")
