@@ -38,7 +38,7 @@ tasks.register("templateCleanup") {
         // Keep the link to the original script
         replace(
             "* https://github.com/$owner/$name/blob/master/buildSrc/src/main/kotlin/publish.gradle.kts",
-        "* https://github.com/cortinico/kotlin-android-template/blob/master/buildSrc/src/main/kotlin/publish.gradle.kts"
+            "* https://github.com/cortinico/kotlin-android-template/blob/master/buildSrc/src/main/kotlin/publish.gradle.kts"
         )
     }
 
@@ -67,9 +67,9 @@ fun File.replace(oldValue: String, newValue: String) {
 
 fun patchReadme(repository: String, name: String) {
     val newIntro = file(".github/template-cleanup/README.md")
-            .readText()
-            .replace("%NAME%", name)
-            .replace("%REPOSITORY%", repository)
+        .readText()
+        .replace("%NAME%", name)
+        .replace("%REPOSITORY%", repository)
 
     var featuresFound = false
     val existingReadme = file("README.md").readLines().mapNotNull {
@@ -89,7 +89,7 @@ fun srcDirectories() = projectDir.listFiles()!!
 fun changePackageName(owner: String, name: String) {
     srcDirectories().forEach {
         it.walk().filter {
-            it.isFile && (it.extension == "kt" || it.extension == "kts"  || it.extension == "xml")
+            it.isFile && (it.extension == "kt" || it.extension == "kts" || it.extension == "xml")
         }.forEach {
             it.replace("com.ncorti.kotlin.template", "com.github.$owner.$name")
         }
