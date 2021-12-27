@@ -12,10 +12,6 @@ plugins {
 
 allprojects {
     group = PUBLISHING_GROUP
-    repositories {
-        google()
-        mavenCentral()
-    }
 }
 
 subprojects {

@@ -9,9 +9,9 @@ repositories {
 kotlinDslPluginOptions.experimentalWarning.set(false)
 
 object Plugins {
-    const val AGP = "7.0.0"
+    const val AGP = "7.0.4"
     const val DOKKA = "1.5.0"
-    const val KOTLIN = "1.5.21"
+    const val KOTLIN = "1.6.10"
 }
 
 dependencies {
