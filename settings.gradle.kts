@@ -25,6 +25,8 @@ dependencyResolutionManagement {
 
 rootProject.name = ("kotlin-android-template")
 
+enableFeaturePreview("VERSION_CATALOGS")
+
 include(
     "app",
     "library-android",
