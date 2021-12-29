@@ -8,6 +8,7 @@ plugins {
     alias(libs.plugins.ktlint)
     alias(libs.plugins.versions)
     cleanup
+    base
 }
 
 allprojects {
@@ -18,7 +19,6 @@ subprojects {
     apply {
         plugin("io.gitlab.arturbosch.detekt")
         plugin("org.jlleitschuh.gradle.ktlint")
-        plugin("com.github.ben-manes.versions")
     }
 
     ktlint {
@@ -47,11 +47,7 @@ subprojects {
 }
 
 tasks {
-    register("clean", Delete::class.java) {
-        delete(rootProject.buildDir)
-    }
-
-    withType<DependencyUpdatesTask> {
+    withType<DependencyUpdatesTask>().configureEach {
         rejectVersionIf {
             candidate.version.isStableVersion().not()
         }

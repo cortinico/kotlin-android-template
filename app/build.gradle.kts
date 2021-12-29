@@ -35,7 +35,7 @@ android {
         }
     }
 
-    lintOptions {
+    lint {
         isWarningsAsErrors = true
         isAbortOnError = true
     }
@@ -55,7 +55,7 @@ android {
 }
 
 dependencies {
-    implementation(kotlin("stdlib-jdk7"))
+    implementation(kotlin("stdlib-jdk8"))
 
     implementation(projects.libraryAndroid)
     implementation(projects.libraryKotlin)

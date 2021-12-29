@@ -36,7 +36,7 @@ android {
         }
     }
 
-    lintOptions {
+    lint {
         isWarningsAsErrors = true
         isAbortOnError = true
     }
