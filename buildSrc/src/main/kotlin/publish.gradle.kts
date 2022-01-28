@@ -28,7 +28,7 @@ plugins {
     id("org.jetbrains.dokka")
 }
 
-val dokkaJar = tasks.create<Jar>("dokkaJar") {
+val dokkaJar = tasks.register<Jar>("dokkaJar") {
     group = "build"
     description = "Assembles Javadoc jar from Dokka API docs"
     archiveClassifier.set("javadoc")

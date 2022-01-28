@@ -4,26 +4,26 @@ plugins {
     id("com.android.application") apply false
     id("com.android.library") apply false
     kotlin("android") apply false
-    id("io.gitlab.arturbosch.detekt") version BuildPluginsVersion.DETEKT
-    id("org.jlleitschuh.gradle.ktlint") version BuildPluginsVersion.KTLINT
-    id("com.github.ben-manes.versions") version BuildPluginsVersion.VERSIONS_PLUGIN
+    alias(libs.plugins.detekt)
+    alias(libs.plugins.ktlint)
+    alias(libs.plugins.versions)
     cleanup
+    base
 }
 
 allprojects {
     group = PUBLISHING_GROUP
 }
-
+val ktlintVersion = libs.versions.ktlint.get()
 subprojects {
     apply {
         plugin("io.gitlab.arturbosch.detekt")
         plugin("org.jlleitschuh.gradle.ktlint")
-        plugin("com.github.ben-manes.versions")
     }
 
     ktlint {
         debug.set(false)
-        version.set(Versions.KTLINT)
+        version.set(ktlintVersion)
         verbose.set(true)
         android.set(false)
         outputToConsole.set(true)
@@ -47,11 +47,7 @@ subprojects {
 }
 
 tasks {
-    register("clean", Delete::class.java) {
-        delete(rootProject.buildDir)
-    }
-
-    withType<DependencyUpdatesTask> {
+    withType<DependencyUpdatesTask>().configureEach {
         rejectVersionIf {
             candidate.version.isStableVersion().not()
         }
