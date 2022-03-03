@@ -32,4 +32,4 @@ dokka_core = { module = "org.jetbrains.dokka:dokka-core", version.ref = "dokka"}
 [plugins]
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 ktlint = { id = "org.jlleitschuh.gradle.ktlint", version = "10.2.1" }
-versions = { id = "com.github.ben-manes.versions", version = "0.39.0" }
+versions = { id = "com.github.ben-manes.versions", version = "0.42.0" }
