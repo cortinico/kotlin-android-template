@@ -14,7 +14,7 @@ plugins {
 allprojects {
     group = PUBLISHING_GROUP
 }
-val ktlintVersion = libs.versions.ktlint.get()
+val ktlintVersion = libs.versions.ktlint.asProvider().get()
 subprojects {
     apply {
         plugin("io.gitlab.arturbosch.detekt")
@@ -37,12 +37,6 @@ subprojects {
 
     detekt {
         config = rootProject.files("config/detekt/detekt.yml")
-        reports {
-            html {
-                enabled = true
-                destination = file("build/reports/detekt.html")
-            }
-        }
     }
 }
 
