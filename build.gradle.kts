@@ -13,7 +13,10 @@ plugins {
 allprojects {
     group = PUBLISHING_GROUP
 }
+
 val ktlintVersion = libs.versions.ktlint.asProvider().get()
+val detektFormatting = libs.detekt.formatting
+
 subprojects {
     apply {
         plugin("io.gitlab.arturbosch.detekt")
@@ -24,7 +27,7 @@ subprojects {
     }
 
     dependencies {
-        detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:${BuildPluginsVersion.DETEKT}")
+        detektPlugins(detektFormatting)
     }
 }
 
