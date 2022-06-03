@@ -36,6 +36,13 @@ android {
         }
     }
 
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
+
     lint {
         warningsAsErrors = true
         abortOnError = true
