@@ -29,7 +29,6 @@ import kotlinx.coroutines.launch
 import java.lang.IllegalStateException
 
 @Suppress("LongMethod")
-@ExperimentalAnimationApi
 @Composable
 fun Factorial(modifier: Modifier = Modifier) {
     var textFieldState by remember { mutableStateOf("") }

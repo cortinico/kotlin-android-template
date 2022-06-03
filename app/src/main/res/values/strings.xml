@@ -5,6 +5,5 @@
     <string name="factorial_hint">Insert a number to compute his factorial</string>
     <string name="compute">Compute</string>
     <string name="notification_title">The Result is:</string>
-    <string name="factorial_input_invalid">Valid range is 0–20</string>
     <string name="compose_version">In Compose</string>
 </resources>
