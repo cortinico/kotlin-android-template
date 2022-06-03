@@ -5,7 +5,6 @@ plugins {
     id("com.android.library") apply false
     kotlin("android") apply false
     alias(libs.plugins.detekt)
-    alias(libs.plugins.ktlint)
     alias(libs.plugins.versions)
     cleanup
     base
@@ -14,29 +13,21 @@ plugins {
 allprojects {
     group = PUBLISHING_GROUP
 }
+
 val ktlintVersion = libs.versions.ktlint.asProvider().get()
+val detektFormatting = libs.detekt.formatting
+
 subprojects {
     apply {
         plugin("io.gitlab.arturbosch.detekt")
-        plugin("org.jlleitschuh.gradle.ktlint")
-    }
-
-    ktlint {
-        debug.set(false)
-        version.set(ktlintVersion)
-        verbose.set(true)
-        android.set(false)
-        outputToConsole.set(true)
-        ignoreFailures.set(false)
-        enableExperimentalRules.set(true)
-        filter {
-            exclude("**/generated/**")
-            include("**/kotlin/**")
-        }
     }
 
     detekt {
         config = rootProject.files("config/detekt/detekt.yml")
+    }
+
+    dependencies {
+        detektPlugins(detektFormatting)
     }
 }
 
