@@ -6,7 +6,7 @@ name: Template Cleanup
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   template-cleanup:
@@ -37,5 +37,5 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@v0.6.0
         with:
-          branch: master
+          branch: main
           github_token: ${{ secrets.GITHUB_TOKEN }}
