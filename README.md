@@ -24,7 +24,7 @@ Once created don't forget to update the:
 - CI Setup with GitHub Actions.
 - Publish to **Maven Central** with Github Actions.
 - Dependency versions managed via `buildSrc`.
-- Kotlin Static Analysis via `detekt`.
+- Kotlin Static Analysis via `detekt` and `ktlint`.
 - Issues Template (bug report + feature request).
 - Pull Request Template.
 
@@ -36,7 +36,7 @@ Dependencies are centralized inside the [Dependencies.kt](buildSrc/src/main/java
 
 ## Static Analysis 🔍
 
-This template is using [**detekt**](https://github.com/detekt/detekt) to analyze the source code, with the configuration that is stored in the [detekt.yml](config/detekt/detekt.yml) file (the file has been generated with the `detektGenerateConfig` task). It also uses the detekt-formatting plugin include the ktlint rules (see https://detekt.github.io/detekt/formatting.html).
+This template is using [**detekt**](https://github.com/detekt/detekt) to analyze the source code, with the configuration that is stored in the [detekt.yml](config/detekt/detekt.yml) file (the file has been generated with the `detektGenerateConfig` task). It also uses the **detekt-formatting** plugin which includes the ktlint rules (see https://detekt.dev/docs/rules/formatting/).
 
 ## CI ⚙️
 
