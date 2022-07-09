@@ -85,6 +85,25 @@ If you're using [JitPack](https://jitpack.io/), you don't need any further confi
 
 You probably want to disable the [Publish Snapshot] and [Publish Release](.github/workflows/publish-release.yaml) workflows (delete the files), as Jitpack will take care of that for you.
 
+## Project Structure
+
+The project includes three sub-projects, each in their own subdirectories:
+
+- **`app`:** The source for the final Android application.
+- **`library-android`:** The source for an Android library including UI.
+- **`library-kotlin`:** The source for a UI-less Kotlin library.
+
+The following additional top-level directories configure & support building the app & projects:
+
+- **`buildSrc`:** Builds any shared plugins, tasks, etc used when building the primary sub-project and loads the Gradle Version Catalog [(see more)](https://stackoverflow.com/a/13875350).
+- **`config`:** Contains the [Detekt configuration file](https://detekt.dev/docs/introduction/configurations/).
+- **`gradle`:** Contains the Gradle Version Catalog and the [Gradle Wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html).
+
+Finally, the following hidden top-level directories provide functionality for specific development systems:
+
+- **`.github`:** Defines the [Github Actions](https://github.com/features/actions) CI tasks and templates for new pull requests, issues, etc.
+- **`.idea`:** Sets common initial project settings when the project is opened in [Android Studio](https://developer.android.com/studio) or [IntelliJ IDEA](https://www.jetbrains.com/idea/).
+
 ## Contributing 🤝
 
 Feel free to open a issue or submit a pull request for any bugs/improvements.
