@@ -95,9 +95,9 @@ The project includes three sub-projects, each in their own subdirectories:
 
 The following additional top-level directories configure & support building the app & projects:
 
-- **`buildSrc`:** Builds any shared plugins, tasks, etc used when building the primary sub-project and loads the Gradle Version Catalog [(see more)](https://stackoverflow.com/a/13875350).
+- **`buildSrc`:** Contains shared Gradle logic as [precompiled script plugins](https://docs.gradle.org/current/userguide/custom_plugins.html#sec:precompiled_plugins)
 - **`config`:** Contains the [Detekt configuration file](https://detekt.dev/docs/introduction/configurations/).
-- **`gradle`:** Contains the Gradle Version Catalog and the [Gradle Wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html).
+- **`gradle`:** Contains Gradle Configuration files such as the Gradle Version Catalog and the [Gradle Wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html).
 
 Finally, the following hidden top-level directories provide functionality for specific development systems:
 
