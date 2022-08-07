@@ -18,7 +18,8 @@ Once created don't forget to update the:
 ## Features 🎨
 
 - **100% Kotlin-only template**.
-- 3 Sample modules (Android app, Android library, Kotlin library).
+- 4 Sample modules (Android app, Android library, Kotlin library, Jetpack Compose Activity).
+- Jetpack Compose setup ready to use. 
 - Sample Espresso, Instrumentation & JUnit tests.
 - 100% Gradle Kotlin DSL setup.
 - CI Setup with GitHub Actions.
@@ -92,6 +93,7 @@ The project includes three sub-projects, each in their own subdirectories:
 - **`app`:** The source for the final Android application.
 - **`library-android`:** The source for an Android library including UI.
 - **`library-kotlin`:** The source for a UI-less Kotlin library.
+- **`library-compose`:** The source for a UI library with Jetpack Compose library.
 
 The following additional top-level directories configure & support building the app & projects:
 

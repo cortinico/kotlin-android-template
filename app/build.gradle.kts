@@ -56,6 +56,7 @@ android {
 
 dependencies {
     implementation(projects.libraryAndroid)
+    implementation(projects.libraryCompose)
     implementation(projects.libraryKotlin)
 
     implementation(libs.androidx.appcompat)

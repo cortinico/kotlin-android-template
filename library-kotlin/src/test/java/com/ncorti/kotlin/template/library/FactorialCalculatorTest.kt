@@ -5,6 +5,7 @@ import org.junit.Assert.assertEquals
 import org.junit.Assert.assertThrows
 import org.junit.Test
 import java.lang.Exception
+import java.lang.IllegalStateException
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -28,5 +29,10 @@ class FactorialCalculatorTest {
     @Test
     fun computeFactorial_forFive() {
         assertEquals(120, computeFactorial(5))
+    }
+
+    @Test(expected = IllegalStateException::class)
+    fun computeFactorial_TooLarge() {
+        computeFactorial(21)
     }
 }

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ncorti.kotlin.template.library.compose">
+
+    <application>
+        <activity
+            android:name="com.ncorti.kotlin.template.app.ComposeActivity"
+            android:exported="false" />
+    </application>
+
+</manifest>
