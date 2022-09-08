@@ -43,7 +43,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":library-kotlin"))
+    implementation(projects.libraryKotlin)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.core.ktx)
 
