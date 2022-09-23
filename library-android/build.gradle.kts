@@ -13,6 +13,7 @@ android {
     defaultConfig {
         minSdk = libs.versions.min.sdk.version.get().toInt()
         targetSdk = libs.versions.target.sdk.version.get().toInt()
+        namespace = "com.ncorti.kotlin.template.library.android"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")

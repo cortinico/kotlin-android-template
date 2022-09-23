@@ -23,7 +23,11 @@ class MainActivity : AppCompatActivity() {
         binding.buttonCompute.setOnClickListener {
             if (binding.editTextFactorial.text.isNotEmpty()) {
                 val input = binding.editTextFactorial.text.toString().toLong()
-                val result = FactorialCalculator.computeFactorial(input).toString()
+                val result = try {
+                    FactorialCalculator.computeFactorial(input).toString()
+                } catch (ex: IllegalStateException) {
+                    "Error: ${ex.message}"
+                }
 
                 binding.textResult.text = result
                 binding.textResult.visibility = View.VISIBLE
