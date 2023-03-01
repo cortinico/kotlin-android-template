@@ -14,7 +14,6 @@ allprojects {
     group = PUBLISHING_GROUP
 }
 
-val ktlintVersion = libs.versions.ktlint.asProvider().get()
 val detektFormatting = libs.detekt.formatting
 
 subprojects {
