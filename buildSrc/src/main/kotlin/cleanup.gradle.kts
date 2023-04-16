@@ -57,7 +57,7 @@ tasks.register("templateCleanup") {
     }
 }
 
-fun String.sanitized() = replace(Regex("[^A-Za-z0-9]"), "").toLowerCase()
+fun String.sanitized() = replace(Regex("[^A-Za-z0-9]"), "").lowercase()
 
 fun File.replace(regex: Regex, replacement: String) {
     writeText(readText().replace(regex, replacement))
