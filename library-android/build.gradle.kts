@@ -1,3 +1,5 @@
+import io.gitlab.arturbosch.detekt.Detekt
+
 version = LibraryAndroidCoordinates.LIBRARY_VERSION
 
 plugins {
@@ -58,4 +60,11 @@ dependencies {
 
     androidTestImplementation(libs.androidx.test.runner)
     androidTestImplementation(libs.androidx.test.ext.junit)
+}
+
+tasks {
+    withType<Detekt>().configureEach {
+        // Target version of the generated JVM bytecode. It is used for type resolution.
+        jvmTarget = "17"
+    }
 }
