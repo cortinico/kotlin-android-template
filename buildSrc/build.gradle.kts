@@ -16,3 +16,7 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach 
         jvmTarget = JavaVersion.VERSION_17.toString()
     }
 }
+
+kotlin {
+    jvmToolchain(17)
+}
