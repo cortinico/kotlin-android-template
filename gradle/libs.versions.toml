@@ -10,7 +10,6 @@ compose_compilerextension = "1.4.5"
 constraint_layout = "2.1.4"
 core_ktx = "1.8.0"
 detekt = "1.22.0"
-dokka = "1.8.10"
 espresso_core = "3.4.0"
 junit = "4.13.2"
 kotlin = "1.8.20"
@@ -39,8 +38,6 @@ detekt_formatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", 
 espresso_core = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso.core" }
 agp = { module = "com.android.tools.build:gradle", version.ref = "agp" }
 kgp = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
-dokka_gradle_plugin = { module = "org.jetbrains.dokka:dokka-gradle-plugin", version.ref = "dokka"}
-dokka_core = { module = "org.jetbrains.dokka:dokka-core", version.ref = "dokka"}
 
 [plugins]
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
