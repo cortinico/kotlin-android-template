@@ -17,7 +17,6 @@ kotlin = "1.8.20"
 ktlint = "0.45.2"
 ktlint_gradle = "10.2.1"
 min_sdk_version = "21"
-target_sdk_version = "33"
 benmanesversion = "0.46.0"
 
 [libraries]
