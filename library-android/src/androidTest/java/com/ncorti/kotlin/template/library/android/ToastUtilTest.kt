@@ -1,6 +1,5 @@
 package com.ncorti.kotlin.template.library.android
 
-import android.app.Notification
 import android.widget.Toast
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
