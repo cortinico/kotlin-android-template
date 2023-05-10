@@ -1,6 +1,5 @@
 package com.ncorti.kotlin.template.app
 
-import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.ui.test.assert
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.hasText

@@ -56,7 +56,7 @@ dependencies {
     implementation(libs.compose.material)
 
     testImplementation(libs.junit)
-    
+
     debugImplementation(libs.compose.ui.test.manifest)
     androidTestImplementation(libs.compose.ui.test.junit4)
     androidTestImplementation(libs.androidx.test.runner)
