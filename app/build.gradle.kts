@@ -1,5 +1,3 @@
-import io.gitlab.arturbosch.detekt.Detekt
-
 plugins {
     id("com.android.application")
     kotlin("android")
@@ -71,11 +69,4 @@ dependencies {
     androidTestImplementation(libs.androidx.test.ext.junit.ktx)
     androidTestImplementation(libs.androidx.test.rules)
     androidTestImplementation(libs.espresso.core)
-}
-
-tasks {
-    withType<Detekt>().configureEach {
-        // Target version of the generated JVM bytecode. It is used for type resolution.
-        jvmTarget = "17"
-    }
 }
