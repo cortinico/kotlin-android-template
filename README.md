@@ -30,6 +30,24 @@ Once created don't forget to update the:
 - Issues Template (bug report + feature request).
 - Pull Request Template.
 
+## Known issues
+
+# Use correct JVM version
+
+This template requires you to have the correct JDK version in your path. Check which version you have by running `java --version` in a terminal. This should match the version specified in the Gradle build files e.g.:
+```
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17.toString()
+    }
+```
+If you use a JVM which is too new, you may see an error like this:
+```
+FAILURE: Build failed with an exception.
+* What went wrong:
+Execution failed for task ':library-compose:detekt'.
+> Invalid value (20) passed to --jvm-target, must be one of [1.6, 1.8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+```
+
 ## Gradle Setup 🐘
 
 This template is using [**Gradle Kotlin DSL**](https://docs.gradle.org/current/userguide/kotlin_dsl.html) as well as the [Plugin DSL](https://docs.gradle.org/current/userguide/plugins.html#sec:plugins_block) to setup the build.
