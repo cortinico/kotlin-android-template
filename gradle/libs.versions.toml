@@ -16,7 +16,6 @@ kotlin = "1.8.20"
 ktlint_gradle = "11.3.2"
 min_sdk_version = "21"
 benmanesversion = "0.46.0"
-githooks = "0.0.2"
 
 [libraries]
 junit = { module = "junit:junit", version.ref = "junit" }
@@ -43,4 +42,3 @@ kgp = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kot
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint.gradle" }
 versions = { id = "com.github.ben-manes.versions", version.ref = "benmanesversion" }
-githooks = { id = "com.github.jakemarsden.git-hooks", version.ref = "githooks" }
