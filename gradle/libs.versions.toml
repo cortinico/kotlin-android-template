@@ -1,7 +1,7 @@
 [versions]
 agp = "8.0.2"
 androidx_activity_compose = "1.7.2"
-androidx_test = "1.5.0"
+androidx_test = "1.5.2"
 androidx_test_ext = "1.1.5"
 appcompat = "1.6.1"
 compile_sdk_version = "33"
