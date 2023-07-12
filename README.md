@@ -12,7 +12,7 @@ Just click on [![Use this template](https://img.shields.io/badge/-Use%20this%20t
 
 Once created don't forget to update the:
 - [App ID](buildSrc/src/main/java/Coordinates.kt)
-- AndroidManifest ([here](app/src/main/AndroidManifest.xml) and [here](library-android/src/main/AndroidManifest.xml))
+- AndroidManifest ([here](app/src/main/AndroidManifest.xml) and [here](library-compose/src/main/AndroidManifest.xml))
 - Package of the source files
 
 ## Features 🎨
@@ -28,6 +28,10 @@ Once created don't forget to update the:
 - Kotlin Static Analysis via `detekt` and `ktlint`.
 - Issues Template (bug report + feature request).
 - Pull Request Template.
+
+## Troubleshooting
+
+For help with issues which you might encounter when using this template, please refer to [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
 
 ## Gradle Setup 🐘
 
@@ -72,8 +76,7 @@ In order to use this template to publish on Maven Central, you need to configure
 | `ORG_GRADLE_PROJECT_SIGNING_KEY` | The GPG Private key to sign your artifacts. You can obtain it with `gpg --armor --export-secret-keys <your@email.here>` or you can create one key online on [pgpkeygen.com](https://pgpkeygen.com). The key starts with a `-----BEGIN PGP PRIVATE KEY BLOCK-----`. |
 | `ORG_GRADLE_PROJECT_SIGNING_PWD` | The passphrase to unlock your private key (you picked it when creating the key). |
 
-The template already sets up [Dokka](https://kotlin.github.io/dokka/) for project documentation and attaches `-sources.jar` to your publications,
-via the new AGP publishing DSL.
+The template already attaches `-sources.jar` to your publications via the new AGP publishing DSL.
 
 Once set up, the following workflows will take care of publishing:
 

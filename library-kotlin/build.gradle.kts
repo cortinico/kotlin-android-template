@@ -17,3 +17,7 @@ java {
     withSourcesJar()
     withJavadocJar()
 }
+
+kotlin {
+    jvmToolchain(17)
+}

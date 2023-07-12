@@ -8,7 +8,6 @@ android {
 
     defaultConfig {
         minSdk = libs.versions.min.sdk.version.get().toInt()
-        targetSdk = libs.versions.target.sdk.version.get().toInt()
         namespace = "com.ncorti.kotlin.template.library.compose"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -55,7 +54,7 @@ dependencies {
     implementation(libs.compose.material)
 
     testImplementation(libs.junit)
-    
+
     debugImplementation(libs.compose.ui.test.manifest)
     androidTestImplementation(libs.compose.ui.test.junit4)
     androidTestImplementation(libs.androidx.test.runner)
