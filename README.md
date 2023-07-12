@@ -12,7 +12,7 @@ Just click on [![Use this template](https://img.shields.io/badge/-Use%20this%20t
 
 Once created don't forget to update the:
 - [App ID](buildSrc/src/main/java/Coordinates.kt)
-- AndroidManifest ([here](app/src/main/AndroidManifest.xml) and [here](library-android/src/main/AndroidManifest.xml))
+- AndroidManifest ([here](app/src/main/AndroidManifest.xml) and [here](library-compose/src/main/AndroidManifest.xml))
 - Package of the source files
 
 ## Features 🎨
@@ -22,7 +22,6 @@ Once created don't forget to update the:
 - Jetpack Compose setup ready to use. 
 - Sample Espresso, Instrumentation & JUnit tests.
 - 100% Gradle Kotlin DSL setup.
-- Pre-commit script to ensure gradle `check` task passes before every commit
 - CI Setup with GitHub Actions.
 - Publish to **Maven Central** with Github Actions.
 - Dependency versions managed via `buildSrc`.
