@@ -22,7 +22,7 @@ subprojects {
     }
 
     detekt {
-        config = rootProject.files("config/detekt/detekt.yml")
+        config.from(rootProject.files("config/detekt/detekt.yml"))
     }
 
     dependencies {
