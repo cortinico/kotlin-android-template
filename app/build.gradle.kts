@@ -38,6 +38,7 @@ android {
     lint {
         warningsAsErrors = true
         abortOnError = true
+        disable.add("GradleDependency")
     }
 
     // Use this block to configure different flavors
