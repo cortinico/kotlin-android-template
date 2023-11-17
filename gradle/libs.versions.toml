@@ -16,7 +16,7 @@ kotlin = "1.9.10"
 ktlint_gradle = "11.6.1"
 min_sdk_version = "21"
 target_sdk_version = "34"
-benmanesversion = "0.49.0"
+benmanesversion = "0.50.0"
 
 [libraries]
 junit = { module = "junit:junit", version.ref = "junit" }
