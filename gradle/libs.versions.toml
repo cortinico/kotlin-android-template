@@ -13,7 +13,6 @@ detekt = "1.23.4"
 espresso_core = "3.5.1"
 junit = "4.13.2"
 kotlin = "1.9.20"
-ktlint_gradle = "12.0.2"
 min_sdk_version = "21"
 target_sdk_version = "34"
 benmanesversion = "0.50.0"
@@ -41,5 +40,4 @@ kgp = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kot
 
 [plugins]
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
-ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint.gradle" }
 versions = { id = "com.github.ben-manes.versions", version.ref = "benmanesversion" }
