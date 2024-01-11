@@ -5,7 +5,7 @@ androidx_test = "1.5.0"
 androidx_test_ext = "1.1.5"
 appcompat = "1.6.1"
 compile_sdk_version = "34"
-compose = "1.5.4"
+compose-bom = "2023.10.01"
 compose_compilerextension = "1.5.5"
 constraint_layout = "2.1.4"
 core_ktx = "1.12.0"
@@ -27,12 +27,13 @@ androidx_test_rules = { module = "androidx.test:rules", version.ref = "androidx.
 androidx_test_runner = { module = "androidx.test:runner", version.ref = "androidx.test" }
 androidx_test_ext_junit = { module = "androidx.test.ext:junit", version.ref = "androidx.test.ext" }
 androidx_test_ext_junit_ktx = { module = "androidx.test.ext:junit-ktx", version.ref = "androidx.test.ext" }
-compose_material = { module = "androidx.compose.material:material", version.ref = "compose" }
-compose_foundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose" }
-compose_ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
-compose_ui_tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
-compose_ui_test_junit4 = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "compose" }
-compose_ui_test_manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "compose" }
+compose-bom = { module = "androidx.compose:compose-bom", version.ref = "compose-bom" }
+compose_material = { module = "androidx.compose.material:material" }
+compose_foundation = { module = "androidx.compose.foundation:foundation" }
+compose_ui = { module = "androidx.compose.ui:ui" }
+compose_ui_tooling = { module = "androidx.compose.ui:ui-tooling" }
+compose_ui_test_junit4 = { module = "androidx.compose.ui:ui-test-junit4" }
+compose_ui_test_manifest = { module = "androidx.compose.ui:ui-test-manifest" }
 detekt_formatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
 espresso_core = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso.core" }
 agp = { module = "com.android.tools.build:gradle", version.ref = "agp" }
