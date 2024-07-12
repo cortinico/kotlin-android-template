@@ -1,5 +1,5 @@
 [versions]
-agp = "8.5.0"
+agp = "8.5.1"
 androidx_activity_compose = "1.9.0"
 androidx_test = "1.6.1"
 androidx_test_ext = "1.2.1"
