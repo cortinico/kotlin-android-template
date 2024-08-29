@@ -1,6 +1,8 @@
 plugins {
     id("com.android.library")
     kotlin("android")
+    alias(libs.plugins.compose.compiler)
+
 }
 
 android {
@@ -30,10 +32,6 @@ android {
         compose = true
         viewBinding = true
         buildConfig = false
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.compose.compilerextension.get()
     }
 
     lint {
