@@ -31,7 +31,9 @@ Execution failed for task ':library-compose:detekt'.
 If the error occurs in the **Push changes** step of the workflow and you encounter errors such as:
 
 ```
-fatal: unable to access 'https://github.com/<username>/<repo>.git/': The requested URL returned error: 403 Error: Invalid exit code: 128
+fatal: unable to access 'https://github.com/<username>/<repo>.git/':
+The requested URL returned error: 403 
+Error: Invalid exit code: 128
 ```
 
 then the issue is likely due to the workflow permissions of your repository. To resolve this, navigate to your repository settings, go to **Actions -> General**, and set the Workflow Permissions to **Read and Write**.
