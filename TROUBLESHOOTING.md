@@ -25,3 +25,15 @@ FAILURE: Build failed with an exception.
 Execution failed for task ':library-compose:detekt'.
 > Invalid value (20) passed to --jvm-target, must be one of [1.6, 1.8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
 ```
+
+# Template Cleanup fails in first Workflow
+
+If the error occurs in the **Push changes** step of the workflow and you encounter errors such as:
+
+```
+fatal: unable to access 'https://github.com/<username>/<repo>.git/': The requested URL returned error: 403 Error: Invalid exit code: 128
+```
+
+then the issue is likely due to the workflow permissions of your repository. To resolve this, navigate to your repository settings, go to **Actions -> General**, and set the Workflow Permissions to **Read and Write**.
+
+Once the workflow completes successfully, you can and probably should revert the permissions back to the default settings.
