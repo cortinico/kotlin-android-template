@@ -38,4 +38,12 @@ Error: Invalid exit code: 128
 
 then the issue is likely due to the workflow permissions of your repository. To resolve this, navigate to your repository settings, go to **Actions -> General**, and set the Workflow Permissions to **Read and Write**.
 
+<p align="center">
+  <img src="./TROUBLESHOOTING_IMAGES/Workflow_Write_Permission_1.png" alt="Step1" width="50%"><br>
+  <img src="./TROUBLESHOOTING_IMAGES/Workflow_Write_Permission_2.png" alt="Step2" width="50%"><br>
+  <img src="./TROUBLESHOOTING_IMAGES/Workflow_Write_Permission_3.png" alt="Step3" width="50%"><br>
+  <img src="./TROUBLESHOOTING_IMAGES/Workflow_Write_Permission_4.png" alt="Step4" width="50%"><br>
+</p>
+
+
 Once the workflow completes successfully, you can and probably should revert the permissions back to the default settings.
