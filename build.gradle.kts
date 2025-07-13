@@ -4,6 +4,7 @@ plugins {
     kotlin("android") apply false
     alias(libs.plugins.compose.compiler) apply false
     alias(libs.plugins.detekt)
+    alias(libs.plugins.nexus.publish)
     cleanup
     base
 }
@@ -11,8 +12,9 @@ plugins {
 allprojects {
     val GROUP: String by project
     val VERSION: String by project
+    val USE_SNAPSHOT: String? by project
     group = GROUP
-    version = VERSION
+    version = if (USE_SNAPSHOT.toBoolean()) "$VERSION-SNAPSHOT" else VERSION
 }
 
 val detektFormatting = libs.detekt.formatting
@@ -28,5 +30,19 @@ subprojects {
 
     dependencies {
         detektPlugins(detektFormatting)
+    }
+}
+
+val NEXUS_USERNAME: String? by project
+val NEXUS_PASSWORD: String? by project
+
+nexusPublishing {
+    repositories {
+        sonatype {
+            nexusUrl.set(uri("https://ossrh-staging-api.central.sonatype.com/service/local/"))
+            snapshotRepositoryUrl.set(uri("https://central.sonatype.com/repository/maven-snapshots/"))
+            username.set(NEXUS_USERNAME)
+            password.set(NEXUS_PASSWORD)
+        }
     }
 }
