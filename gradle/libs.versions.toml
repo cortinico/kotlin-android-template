@@ -20,12 +20,12 @@ target_sdk_version = "36"
 junit = { module = "junit:junit", version.ref = "junit" }
 androidx_activity_compose = { module = "androidx.activity:activity-compose", version.ref = "androidx_activity_compose" }
 androidx_appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
-androidx_constraint_layout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraint.layout" }
-androidx_core_ktx = { module = "androidx.core:core-ktx", version.ref = "core.ktx" }
-androidx_test_rules = { module = "androidx.test:rules", version.ref = "androidx.test" }
-androidx_test_runner = { module = "androidx.test:runner", version.ref = "androidx.test" }
-androidx_test_ext_junit = { module = "androidx.test.ext:junit", version.ref = "androidx.test.ext" }
-androidx_test_ext_junit_ktx = { module = "androidx.test.ext:junit-ktx", version.ref = "androidx.test.ext" }
+androidx_constraint_layout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraint_layout" }
+androidx_core_ktx = { module = "androidx.core:core-ktx", version.ref = "core_ktx" }
+androidx_test_rules = { module = "androidx.test:rules", version.ref = "androidx_test" }
+androidx_test_runner = { module = "androidx.test:runner", version.ref = "androidx_test" }
+androidx_test_ext_junit = { module = "androidx.test.ext:junit", version.ref = "androidx_test_ext" }
+androidx_test_ext_junit_ktx = { module = "androidx.test.ext:junit-ktx", version.ref = "androidx_test_ext" }
 compose-bom = { module = "androidx.compose:compose-bom", version.ref = "compose-bom" }
 compose_material = { module = "androidx.compose.material:material" }
 compose_foundation = { module = "androidx.compose.foundation:foundation" }
@@ -34,7 +34,7 @@ compose_ui_tooling = { module = "androidx.compose.ui:ui-tooling" }
 compose_ui_test_junit4 = { module = "androidx.compose.ui:ui-test-junit4" }
 compose_ui_test_manifest = { module = "androidx.compose.ui:ui-test-manifest" }
 detekt_formatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
-espresso_core = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso.core" }
+espresso_core = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso_core" }
 agp = { module = "com.android.tools.build:gradle", version.ref = "agp" }
 kgp = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 
