@@ -13,12 +13,17 @@ To get this working in the mean time, you can downgrade the version of `agp` in 
 # Use correct JVM version
 
 This template requires you to have the correct JDK version in your path. Check which version you have by running `java --version` in a terminal. This should match the version specified in the Gradle build files e.g.:
+
 ```
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
+tasks.withType<KotlinCompile>().configureEach {
+    compilerOptions {
+        jvmTarget.set(JvmTarget.JVM_17)
     }
+}
 ```
+
 If you use a JVM which is too new, you may see an error like this:
+
 ```
 FAILURE: Build failed with an exception.
 * What went wrong:
