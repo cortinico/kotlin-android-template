@@ -12,7 +12,10 @@ plugins {
 }
 
 allprojects {
-    group = PUBLISHING_GROUP
+    val GROUP: String by project
+    val VERSION: String by project
+    group = GROUP
+    version = VERSION
 }
 
 val detektFormatting = libs.detekt.formatting

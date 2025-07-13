@@ -26,7 +26,7 @@ tasks.register("templateCleanup") {
             "rootProject.name = (\"kotlin-android-template\")",
             "rootProject.name = (\"$name\")"
         )
-        file("buildSrc/src/main/java/Coordinates.kt").replace(
+        file("gradle.properties").replace(
             "com.ncorti.kotlin.template",
             "com.github.$owner.$name"
         )

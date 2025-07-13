@@ -1,5 +1,3 @@
-version = LibraryAndroidCoordinates.LIBRARY_VERSION
-
 plugins {
     id("com.android.library")
     kotlin("android")

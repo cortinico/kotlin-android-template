@@ -3,16 +3,20 @@ plugins {
     kotlin("android")
 }
 
+val APP_VERSION_NAME : String by project
+val APP_VERSION_CODE : String by project
+val APP_ID : String by project
+
 android {
     compileSdk = libs.versions.compile.sdk.version.get().toInt()
 
     defaultConfig {
         minSdk = libs.versions.min.sdk.version.get().toInt()
-        namespace = "com.ncorti.kotlin.template.app"
+        namespace = APP_ID
 
-        applicationId = AppCoordinates.APP_ID
-        versionCode = AppCoordinates.APP_VERSION_CODE
-        versionName = AppCoordinates.APP_VERSION_NAME
+        applicationId = APP_ID
+        versionCode = APP_VERSION_CODE.toInt()
+        versionName = APP_VERSION_NAME
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
     buildFeatures {

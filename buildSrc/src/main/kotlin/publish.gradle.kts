@@ -27,25 +27,6 @@ plugins {
 }
 
 publishing {
-    repositories {
-        maven {
-            name = "nexus"
-            url = uri("https://oss.sonatype.org/service/local/staging/deploy/maven2/")
-            credentials {
-                username = "NEXUS_USERNAME".byProperty
-                password = "NEXUS_PASSWORD".byProperty
-            }
-        }
-        maven {
-            name = "snapshot"
-            url = uri("https://oss.sonatype.org/content/repositories/snapshots")
-            credentials {
-                username = "NEXUS_USERNAME".byProperty
-                password = "NEXUS_PASSWORD".byProperty
-            }
-        }
-    }
-
     publications {
         create<MavenPublication>("release") {
             afterEvaluate {
@@ -57,9 +38,6 @@ publishing {
             }
 
             pom {
-                if (!"USE_SNAPSHOT".byProperty.isNullOrBlank()) {
-                    version = "$version-SNAPSHOT"
-                }
                 description.set("A template for Kotlin Android projects")
                 url.set("https://github.com/cortinico/kotlin-android-template/")
 

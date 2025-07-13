@@ -1,5 +1,3 @@
-version = LibraryKotlinCoordinates.LIBRARY_VERSION
-
 plugins {
     id("java-library")
     kotlin("jvm")
